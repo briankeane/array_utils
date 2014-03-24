@@ -31,13 +31,8 @@ module ArrayUtil
     # if they're not the same size, return nothing
     if array1.length != array2.length
       return nil
-    end
-
-    sum = []
-    for i in array1
-      sum = array1[i] + array2[i]
-    end
-
-    return sum
+    else
+     return array1.each_with_index.map { | x, j | x + array2[j] }
+   end
   end
 end
